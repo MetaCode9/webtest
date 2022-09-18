@@ -3,12 +3,6 @@
 //  Keyworkd Count
 
 
-if (!document.getElementById('el_count')) {
-	var el_naver_search_keyword = document.getElementById('nx_query').value;			// 검색 단어 얻기
-	_get_count_keyword(el_naver_search_keyword, 'set_keyword_cnt', 'main');
-}
-
-
 async function _get_count_keyword(ps_keyword, ps_callback, ps_position)
 {
 	if ( !ps_keyword )
@@ -38,6 +32,10 @@ function sleep(delay) {
 	while (new Date().getTime() < start + delay);
 }
 
+if (!document.getElementById('el_count')) {
+	var el_naver_search_keyword = document.getElementById('nx_query').value;			// 검색 단어 얻기
+	_get_count_keyword(el_naver_search_keyword, 'set_keyword_cnt', 'main');
+}
 
 function set_keyword_cnt(po_json)
 {
